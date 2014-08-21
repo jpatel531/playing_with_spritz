@@ -1,29 +1,22 @@
 !!!
 %html{html_attrs}
-  %head
-    %meta{:'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
-    %meta{:name => "lang", :content => "en"}
-    %title Sinatra Bootstrap
-    / %link{:href=>'/stylesheets/application.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
-    %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/modernizr-2.6.2.js"}
-    :javascript
-        var SpritzSettings = {
-            clientId: "f8cd147ee950b3843",
-            redirectUri: "http://localhost:9393/login_success"
-        };
-    %script{type: "text/javascript", src: "http://sdk.spritzinc.com/js/1.2/js/spritz.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/application.js"}
-
+    %head
+        %meta{:'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
+        %meta{:name => "lang", :content => "en"}
+        %title Sinatra Bootstrap
+        / %link{:href=>'/stylesheets/application.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+        %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
+        %script{:type => "text/javascript", :src => "/javascripts/lib/modernizr-2.6.2.js"}
+        :javascript
+            var SpritzSettings = {
+                clientId: "f8cd147ee950b3843",
+                redirectUri: "http://localhost:9393/login_success"
+            };
+        %script{type: "text/javascript", src: "http://sdk.spritzinc.com/js/1.2/js/spritz.min.js"}
+        %script{:type => "text/javascript", :src => "/javascripts/application.js"}
     
-  %body
-    %div{:"data-role" => "spritzer", :"data-url" => "http://bbc.co.uk"}
-    %h1 Hello World
-    %p Sup World
-
-    / %button{class:"btn btn-primary", id:"startSpritzing", :"data-url"=>"http://sdk.spritzinc.com/sampleText/HelloWorld.html"} Spritz!
+    %body
+        %div#spritzer
+        %button{class: "btn btn-primary", id: "startSpritz", type: "submit"} Spritz!
 
 
-    / = partial :_nav_main
-    / = yield
-    / = partial :_analytics
